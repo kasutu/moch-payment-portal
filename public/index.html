@@ -1,0 +1,77 @@
+<!-- Author: Ian Clyde Tejada -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Payment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: calc(1.5rem + 1vw);
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: calc(1rem + 0.5vw);
+      margin: 0.5rem;
+      border-radius: 7px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: calc(1.2rem + 0.5vw);
+      }
+
+      button {
+        font-size: calc(0.8rem + 0.5vw);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="display"></h1>
+  <div>
+    <button id="sendPayment">Send Payment</button>
+    <button id="cancelPayment">Cancel</button>
+  </div>
+
+  <script>
+
+    // Get the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const amount = urlParams.get('a');
+    const h = urlParams.get('h');
+
+    document.getElementById('display').innerHTML = `Pay P ${amount}?`;
+    const sendPayment = document.getElementById('sendPayment');
+    const cancelPayment = document.getElementById('cancelPayment');
+
+    sendPayment.addEventListener('click', () => {
+      alert('Pay completed!');
+      window.location.href = h;
+    });
+
+    cancelPayment.addEventListener('click', () => {
+      alert('Pay canceled!');
+      window.location.href = h;
+    });
+  </script>
+</body>
+
+</html>

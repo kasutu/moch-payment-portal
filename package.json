@@ -5,9 +5,16 @@
   "main": "index.js",
   "author": "alphasec",
   "license": "MIT",
-   "dependencies": {
+  "devDependencies": {
+    "http-server": "^0.12.3"
   },
   "scripts": {
+    "build": "npm i",
+    "serve": "http-server",
     "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
   }
 }
